@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<title>广州市白云区景泰中学初一钟金宝和黄敏涛最nb</title>
-	</head>
-	<link href="wky.js"  rel="stylesheet"/>
-	<body>
-		<div id="qr">
-			<div id="i" style="position: absolute;left: 100px;top: 100px; ">
-				<img src="images/enemy1.png" />
-			</div>
-		</div>
-		<input type="text" id="t"/>
-		<br />
-		<br />
-		<button onclick="change()">
-			点击更换二维码
-		</button>
-	</body>
-	<script src="qrcode.js"></script>
-	<script src="wky.js"></script>
-	<script>
-		var qrcode = new QRCode('qr', {
-			colorDark : "pink"
-		})
-		qrcode.makeCode("吴坤烨")
-		var change = function() {
-			qrcode.makeCode(t.value)
-		}
-	</script>
-</html>
+    <head>
+    	<style>
+    	    #box{
+    	    	margin-left:600px;
+    	    	margin-top:200px;
+    	    }
+    	</style>
+    	<meta charset="UTF-8" />
+    	<title>这是一个神奇的网页!</title>
+    	<body bgcolor = "yellow">
+    		<div id="box">
+    	    <h1 style="color: red ;margin-left: 50px">登录界面</h1>
+    	    <label>账户:</label>
+    	    <input type="text" id="w"/>
+    	    <br/>
+    	    <br/>
+    	    <label>密码:</label>	
+    	    <input type="password" id="k"/>
+    	    <br/>
+    	    <br/>
+    	    <input style="width: 50px;height: 40px;background: light green;margin-left:50px;" type="button" value="登录"; onclick="kkz()" />
+    	    <input style="width: 50px;height: 40px;background: light green;margin-left:50px;" type="button" value="清除"; onclick="w.value='';k.value='';"/>
+    	    <button onclick="alert(w.value)">测试</button>    
+    	    </div>
+    	</body>
+    	<script>
+    		var kkz=function(){
+    			if(w.value!=''&&k.value!=''){
+    			    if(w.value==13535288436){
+    			    	if(k.value==13535288436){
+    			    		window.location="my.html"
+    			    	}else{
+    			    		alert("密码错误!")
+    			    	}
+    			    }else{
+    			    	alert("账户不存在!")
+    			    }
+    			}else{
+    				alert("账户或密码不能为空!")
+    			}
+    		}
