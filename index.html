@@ -1,77 +1,32 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html>	
+<html>		
 	<head>
-		<meta charset="utf-8">
-		<title>时钟</title>
+		<meta charset="UTF-8" />
+		<title>I love Mrs Chun,marry me!</title>		
 	</head>
-
-	<body>
-		<canvas id="canvas" width="500px" height="500px" style="border:10px solid gray;border-radius: 50%;background-color:black">
-			a
-		</canvas>
+	<style>
+		input {
+			color:red;
+			background: lightgreen;
+			width: 100px;
+			height: 40px;
+			font-size: 20px;
+		}
+	</style>
+	<body bgcolor = "yellow">
+		<h1 style="color:blue;position:absolute;left:550px;top:200px;">Do you love me?</h1>
+        <input style="position:absolute;left:550px;top:300px" type="button" value="Yes" onclick="Yes()"/>
+		<input style="position:absolute;left:700px;top:300px" type="button" value="No" onmouseover="No()" id="btn"/>
 	</body>
 	<script>
-		var ctx = canvas.getContext('2d');
-		var date, hour, minute, second, millisecond, ph, pm, ps, pms
-		function clock() {
-			ctx.clearRect(0, 0, 500, 500);
-			date = new Date();
-			hour = date.getHours() + minute / 60
-			ph = parseInt(hour)
-			hour = hour % 12
-			minute = date.getMinutes() + second / 60
-			pm = parseInt(minute)
-			second = date.getSeconds() + millisecond / 1000
-			ps = parseInt(second)
-			millisecond = date.getMilliseconds();
-			pms = parseInt(millisecond)
-			ctx.font = "50px 微软雅黑";
-			ctx.fillStyle="red"
-			ctx.fillText("时钟", 200, 200);
-			ctx.fillText(ph + ":" + pm + ":" + ps + ":" + pms, 100, 300)
-			draws();
-			draw();
-			dra()
-			dr()
-		}
-
-		setInterval(clock, 10);
-		//clock();
-		function draws() {
-			ctx.beginPath();
-			ctx.arc(250, 250, 230, -0.5 * Math.PI, 2 * Math.PI / 1000 * millisecond - 0.5 * Math.PI);
-			ctx.lineWidth = 20
-			ctx.strokeStyle = "white"
-			ctx.stroke();
-			ctx.closePath();
-		}
-
-		function draw() {
-			ctx.beginPath();
-			ctx.arc(250, 250, 200, -0.5 * Math.PI, 2 * Math.PI / 60 * second - 0.5 * Math.PI);
-			ctx.lineWidth = 20
-			ctx.strokeStyle = "grey"
-			ctx.stroke();
-			ctx.closePath();
-		}
-
-		function dra() {
-			ctx.beginPath();
-			ctx.arc(250, 250, 170, -0.5 * Math.PI, 2 * Math.PI / 60 * minute - 0.5 * Math.PI);
-			ctx.lineWidth = 20
-			ctx.strokeStyle = "orange"
-			ctx.stroke();
-			ctx.closePath();
-		}
-
-		function dr() {
-			ctx.beginPath();
-			ctx.arc(250, 250, 140, -0.5 * Math.PI, 2 * Math.PI / 12 * hour - 0.5 * Math.PI);
-			ctx.lineWidth = 20
-			ctx.strokeStyle = "yellow"
-			ctx.stroke();
-			ctx.closePath();
-		}
+	    var Yes=function() {
+	    	alert("I love you too!")
+	    }
+	    var No=function() {
+	    	btn.style.left=Math.random()*500+"px";
+	    	btn.style.top=Math.random()*500+"px";
+	   
+	    }
+	    	
 	</script>
-
 </html>
