@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>注册界面</title>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		用户名字:
+		<input type="text" id="q" onkeyup="check()"/>
+		<span id="r"> </span>
+		<br />
+		<br />
+		用户密码:
+		<input type="password" id="w" onkeyup="check()"/>
+		<span id="t"> </span>
+		<br />
+		<br />
+		确认密码:
+		<input type="password" id="e" onkeyup="check()"/>
+		<span id="y"> </span>
+		<br />
+		<br />
+		<button onclick= "register()">
+			注册
+		</button>
+	</body>
+	<script>
+		var s = window.localStorage;
+		function checkNull() {
+			//alert(2)
+			if (q.value == '' || w.value == '' || e.value == '') {
+				//alert("") 禁用
+
+				r.innerHTML = "名字和密码不能为空"
+				return 0;
+			} else {
+				r.innerHTML = "";
+				return 1;
+			}
+
+		}
+
+		function checkPw() {
+			//alert(3)
+			if (checkNull()) {
+				if (w.value == e.value) {
+					t.style.color = 'green'
+					t.innerHTML = "密码一致"
+                    return 1;
+				} else {
+					t.style.color = 'red'
+					t.innerHTML = "密码不一致"
+					return 0;
+				}
+			}else{
+				t.innerHTML="";
+			}
+		}
+
+		function check() {
+			checkNull()
+			checkPw()
+			checkId()
+			//alert(1)
+		}
+		var register=function(){
+			if( checkNull()&&checkId()&&checkPw()){
+			s.setItem(q.value,w.value)
+			alert("注册成功")
+			window.location='login.html'
+		}else{
+			alert("注册失败,请按照提示输入！")
+		}}
+		var checkId=function(){
+			if(s.getItem(t.value)){
+				y.style.color="red"
+				y.innerHTML="账户已经存在!"
+				return 0;
+			}else{
+				y.style.color="green"
+				y.innerHTML="账户可用"
+				return 1;
+			}
+		}
+	</script>
+</html>
