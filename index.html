@@ -1,39 +1,127 @@
-<!DOCTYPE html>	
-<html>		
+<html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>一个新手的网站</title>		
+		<title>登录界面</title>
 	</head>
 	<style>
-		input {
-			color:red;
-			background: lightgreen;
-			width: 100px;
-			height: 40px;
-			font-size: 20px;
+		body {
+			background: #d3d3d3;
 		}
+		h1 {
+			margin-left: 7%;
+		}
+		#box {
+			position: absolute;
+			left: 40%;
+			top: 30%;
+			border: 10px double gray;
+			border-radius: 10%;
+		}
+		input {
+			margin-right: 10px;
+			background: #d3d3d3;
+			border-radius: 10%;
+		}
+		button {
+			width: 32%;
+			background: #d3d3d3;
+			font-size: 20px;
+			border-radius: 10%;
+		}
+		#head1, #head3, #head5 {
+			border: 10px double gray;
+		}
+		#head2, #head4, #head6 {
+			border: 10px double #D3D3D3;
+		}
+		#left {
+			position: absolute;
+			border: 4px double #DdDdDd;
+			left: 1%;
+			top: 20%;
+			width: 25%;
+			height: 70%;
+		}
+		#right {
+			position: absolute;
+			border: 4px double #DdDdDd;
+			left: 73%;
+			top: 20%;
+			width: 25%;
+			height: 70%;
+			margin-right: 1px
+		}
+		#bottom {
+			position: absolute;
+			border: 4px double #DdDdDd;
+			left: 34%;
+			top: 70%;
+			width: 30%;
+			height: 20%;
+			margin-right: 1px
+		}
+		
 	</style>
-	<body bgcolor = "pink">
-		<h1 style="color:blue;position:absolute;left:550px;top:200px;">Do you love me?</h1>
-        <input style="position:absolute;left:550px;top:300px" type="button" value="Yes" onclick="Yes()"/>
-		<input style="position:absolute;left:700px;top:300px" type="button" value="No" onmouseover="No()" id="btn"/>
+	<body>
+		<div id="head1"></div>
+		<div id="head2"></div>
+		<div id="head3"></div>
+		<div id="head4"></div>
+		<div id="head5"></div>
+		<div id="head6"></div>
+		<div id="left">
+			.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />
+		</div>
+		<div id="right"> 
+			.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />.<hr />
+		</div>
+		<div id="bottom">
+			.<hr />.<hr />.<hr />.<hr />
+			
+			 </div>
+		<div id="box">
+			<h1>login interface</h1>
+			<hr/>
+			<i style="margin-left: 18px"><b>User ID:</b></i>
+			<input type="text" id="t" />
+			<hr/>
+			<i ><b>Password:</b></i>
+			<input type="password" id="p" />
+			<hr/>
+			<button style="margin-left: 87px;" onclick="login();">
+				Login
+			</button>
+			<button onclick="c();">
+				Register
+			</button>
+			<br />
+			<br />
+		</div>
 	</body>
 	<script>
-	    var Yes=function() {
-	    	alert("我们开始故事吧！qq:2238580898")
-	    }
-	    var No=function() {
-	    	btn.style.left=Math.random()*500+"px";
-	    	btn.style.top=Math.random()*500+"px";
-		    
-	   
-	    }
-	    	alert("陈晋如是景泰最美的大佬啊啊啊啊！！")
-		
-		
-
+		function c() {
+			window.location='register.html';
+		}
+        var s=window.localStorage;
+		function login() {
+			//非空
+			if (t.value != "" && p.value != "") {
+				//账号是否存在
+				if (s.getItem(t.value)) {
+					//密码是否正确
+					if (p.value ==s.getItem(t.value)) {
+						alert("登录成功");
+						//跳转界面
+						window.location = '../01/wukunyeerweima.html'
+					} else {
+						alert("登录失败");
+					}
+				} else {
+					alert("账号不存在！");
+				}
+			} else {
+				alert("账号和密码不能为空！")
+			}
+		}
 	</script>
-
-
-
 </html>
