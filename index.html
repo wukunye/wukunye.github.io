@@ -100,7 +100,8 @@
 	</body>
 	<script>
 		function c() {
-			window.location='register.html';
+			alert("对不起,暂不开放!")
+			//window.location='register.html';
 		}
         var s=window.localStorage;
 		function login() {
@@ -112,7 +113,7 @@
 					if (p.value ==s.getItem(t.value)) {
 						alert("登录成功");
 						//跳转界面
-						window.location = 'wukunyeerweima.html'
+						window.location = 'hutingwei.html'
 					} else {
 						alert("登录失败");
 					}
